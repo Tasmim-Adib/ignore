@@ -4,9 +4,9 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from dotenv import load_dotenv
 
 # Load variables from .env file
-# load_dotenv()
+load_dotenv()
 
-MONGODB_URL = 'mongodb+srv://adibskitto:QsRbJD3MAhcO8IL7@cluster0.96y8ytj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+MONGODB_URL = os.environ.get('MONGODB_URL')
 client = AsyncIOMotorClient(MONGODB_URL)
 database = client['boycott']
 
